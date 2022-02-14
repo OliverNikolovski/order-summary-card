@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --bright-blue-with-opacity: hsl(245, 75%, 52%, 0.7);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+    --border-radius: 1rem;
+    --gap: 2rem;
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/pattern-background-desktop.svg');
+    background-repeat: repeat-x;
+    background-color: var(--pale-blue);
+    /* background-size: contain; */
+    background-size: 100% 50%;
+}
+
+.card {
+    max-width: 32rem;
+    height: fit-content;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 100px var(--desaturated-blue);
+}
+
+.card-order-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    height: fit-content;
+    gap: var(--gap);
+}
+
+.card-picture {
+    width: 100%;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.card-text {
+    text-align: center;
+    color: var(--desaturated-blue);
+    font-size: 1.3rem;
+}
+
+.card-heading {
+    color: var(--dark-blue);
+    font-weight: 1000;
+}
+
+.subscription-info-container {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--very-pale-blue);
+    min-height: 7rem;
+    border-radius: var(--border-radius);
+}
+
+.subscription-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.subscription-info h3 {
+    color: var(--dark-blue);
+}
+
+.subscription-price {
+    color: var(--desaturated-blue);
+}
+
+.change {
+    flex-grow: 1;
+    text-align: right;
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--gap);
+}
+
+.actions button[name='proceed'] {
+    min-height: 3.2rem;
+    border-radius: 0.7rem;
+    background-color: var(--bright-blue);
+    color: var(--very-pale-blue);
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 10px 100px var(--desaturated-blue);
+    transition-duration: 0.2s;
+}
+
+a.cancel {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: var(--desaturated-blue);
+    font-weight: 700;
+}
+
+button[name='proceed']:hover {
+    background-color: var(--bright-blue-with-opacity);
+    cursor: pointer;
+}
+
+a.cancel:hover {
+    color: var(--dark-blue);
+}
+
+.change a:hover {
+    color: var(--bright-blue-with-opacity);
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 375px) {
+    body {
+        background-image: none;
+        font-size: 0.8rem;
+    }
+    .card-text {
+        font-size: 1rem;
+    }
+    :root {
+        --gap: 1rem
+    }
+    .subscription-info-container {
+        padding: 1rem;
+    }
+    .card-order-summary {
+        padding: 1rem;
+    }
+}
